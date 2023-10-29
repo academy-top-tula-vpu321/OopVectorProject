@@ -1,30 +1,37 @@
 ﻿#include <iostream>
+#include "Vector.h"
 
-class Vector
-{
-    int* array;
-    int size;
-public:
-    Vector() : array{ nullptr }, size{} {}
-    Vector(int size)
-        : array{ new int[size] }, size{ size } 
-    {
-        std::cout << this << " Vector construct\n";
-    }
-    ~Vector() 
-    { 
-        delete[] array; 
-        std::cout << this << " Vector destruct\n";
-    }
-};
 
 int main()
 {
-    {
-        Vector* v1 = new Vector(10);
-        Vector v2(10);
-        delete v1;
-    }
+    srand(time(nullptr));
+
+    Vector* v1 = new Vector(10);
+    //Vector v1(10);
+
+    for (int i = 0; i < 10; i++)
+        v1->SetItem(i, i + 1);
+
+    for (int i = 0; i < v1->Size(); i++)
+        std::cout << v1->GetItem(i) << " ";
+    std::cout << "\n";
+
+    v1->PushBack(200);
+    v1->PushBack(300);
+    v1->PushFront(400);
+    v1->PushFront(500);
+
+    v1->Insert(5, 1000);
+    v1->Insert(0, 2000);
+    v1->Insert(v1->Size(), 3000);
+
+    for (int i = 0; i < v1->Size(); i++)
+        std::cout << v1->GetItem(i) << " ";
+    std::cout << "\n";
+
+
+
+    delete v1;
     
     //
 }
