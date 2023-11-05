@@ -27,9 +27,16 @@ public:
     void PushFront(int value);
     void Insert(int index, int value);
 
+    int operator[](int index)
+    {
+        return array[index];
+    }
+
     int PopBack();
     int PopFront();
     int Remove(int index);
+
+    
 
     int Size();
     

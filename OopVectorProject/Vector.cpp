@@ -60,6 +60,8 @@ void Vector::Insert(int index, int value)
 	size++;
 }
 
+
+
 int Vector::Size()
 {
 	return size;

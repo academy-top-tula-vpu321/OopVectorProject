@@ -29,9 +29,13 @@ int main()
         std::cout << v1->GetItem(i) << " ";
     std::cout << "\n";
 
+    int n = v1[6];
 
 
     delete v1;
+
+    int* arr = new int[10];
+    arr[3] = 10;
     
     //
 }
